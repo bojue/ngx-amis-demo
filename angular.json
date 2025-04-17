@@ -15,8 +15,13 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "outputHashing": "all",
+            "namedChunks": true,
+            "customWebpackConfig": {
+              "path": "./webpack.config.js"
+            },
             "outputPath": "dist/ngx-amis-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -27,12 +32,23 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*.css",
+                "input": "node_modules/monaco-editor/esm/vs/editor/standalone/browser",
+                "output": "/assets/monaco/"
+              },
+              {
+                "glob": "**/*.css",
+                "input": "node_modules/amis-editor/dist/editor.css",
+                "output": "/assets/amis-editor/"
+              }
             ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": ["amis"]
           },
           "configurations": {
             "production": {
@@ -62,7 +78,10 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
+          "options": {
+    
+          },
           "configurations": {
             "production": {
               "browserTarget": "ngx-amis-demo:build:production"
@@ -100,5 +119,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "c6d7fe3a-4469-4a2c-adb0-052f87862c1d"
   }
 }

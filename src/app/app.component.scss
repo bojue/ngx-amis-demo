@@ -1,0 +1,55 @@
+.app {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow-y: hidden;
+
+  header {
+    height: 56px;
+    line-height: 56px;
+    padding: 0 30px;
+    font-size: 18px;
+    color: #646a73;
+    text-align: center;
+    border-block-end-width: 3px;
+    border-bottom-style: solid;
+    // border-image: linear-gradient( 90deg, oklch(69.02% .277 332.77) 0%, oklch(53.18% .28 296.97) 100% ) 1;
+    background: linear-gradient( 140deg, oklch(69.02% .277 332.77) 0%, oklch(69.02% .277 332.77) 15%, color-mix(in srgb, oklch(69.02% .277 332.77), oklch(53.18% .28 296.97) 50%) 25%, color-mix(in srgb, oklch(69.02% .277 332.77), oklch(53.18% .28 296.97) 10%) 35%, color-mix(in srgb, oklch(69.02% .277 332.77), oklch(63.32% .24 31.68) 50%) 42%, color-mix(in srgb, oklch(69.02% .277 332.77), oklch(63.32% .24 31.68) 50%) 44%, color-mix(in srgb, oklch(69.02% .277 332.77), white 70%) 47%, oklch(53.18% .28 296.97) 48%, oklch(51.01% .274 263.83) 60% );
+    background-clip: text;
+    color: transparent;
+    .amis {
+      font-weight: 500;
+      font-size: 20px;
+    }
+  }
+
+  .body {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    height: calc(100% - 60px);
+    .nav {
+      display: block;
+      padding: 8px 24px;
+      margin-bottom: 10px;
+      color: #777;
+      text-decoration: none;
+      &.active {
+        color: rgb(20, 86, 240);
+        background: rgba(20, 86, 240, 0.1);
+        border-radius: 6px;
+      }
+    }
+    .sidebar {
+      padding: 20px;
+      font-size: 16px;
+      height: 100%;
+      font-weight: 400;
+      position: relative;
+    }
+  }
+
+
+  .content {
+    padding: 20px;
+  }
+}

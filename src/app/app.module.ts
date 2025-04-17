@@ -3,16 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AMISDemoRoutingModule } from './amis-demo/amis-demo.route';
+import { HomeComponent } from './home/home.component';
+import { configure } from 'mobx';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AMISDemoRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {   
+    configure({ 
+      isolateGlobalState: true }); // 隔离 MobX 状态
+  }
+ }

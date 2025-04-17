@@ -1,9 +1,20 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
+  "exclude": [
+    "node_modules/amis",
+    "node_modules/amis-editor-core",
+    "node_modules/amis-editor",
+    "node_modules/amis-ui",
+    "node_modules/amis-core",
+    "node_modules/amis-sdk",
+    "node_modules/monaco-editor",
+  ],
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "skipLibCheck": true,
+
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
@@ -22,6 +33,10 @@
     "lib": [
       "ES2022",
       "dom"
+    ],
+    "types": [
+      "node",
+      "jasmine"
     ]
   },
   "angularCompilerOptions": {
