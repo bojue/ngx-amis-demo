@@ -1,6 +1,6 @@
 # NgX Amis Demo
  
-基于angular9的 Amis 的Demo预览
+基于angular16 的 Amis 的Demo预览
 
 > 需求背景：
 
