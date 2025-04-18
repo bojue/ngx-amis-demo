@@ -17,4 +17,8 @@
 2. 为了降低开发成本，会把`amis sdk ` 按需模块build 放到`src/asserts`目录下
 
 
+## Demo
 
+![截屏2025-04-18 17 31 41](https://github.com/user-attachments/assets/3069ed42-a7ce-47fd-af81-8194b4a5ad26)
+
+![截屏2025-04-18 17 31 51](https://github.com/user-attachments/assets/31593fb6-5f17-4e16-9172-3e083ea8ee40)
